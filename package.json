@@ -1,0 +1,61 @@
+{
+  "name": "frontend-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tamanyan/frontend-service.git",
+  "author": "Taketo Yoshida <tamanyan.sss@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development node server/index.js",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production node server/index.js",
+    "lint": "eslint -c .eslintrc.js --ext .ts,.tsx src/**/*",
+    "format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix src/**/*",
+    "api": "json-server --watch db.json --port 3001",
+    "docker:build": "docker build --no-cache -t 009347090857.dkr.ecr.ap-southeast-1.amazonaws.com/frontend:latest ."
+  },
+  "engines": {
+    "node": "12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.3.3",
+    "next-i18next": "^4.2.1",
+    "next-offline": "^5.0.0",
+    "next-redux-wrapper": "^4.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-lazyload": "^2.6.6",
+    "styled-components": "^5.0.1",
+    "styled-normalize": "^8.0.7"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/next": "^9.0.0",
+    "@types/node": "^12.4.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "@zeit/next-css": "^1.0.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "json-server": "^0.16.1",
+    "next-build-id": "^3.0.0",
+    "next-compose-plugins": "^2.2.0",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  }
+}

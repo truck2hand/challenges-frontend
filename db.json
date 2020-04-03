@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Test",
+      "imagePath": "/static/images/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Test",
+      "imagePath": "/static/images/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Test",
+      "imagePath": "/static/images/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Test",
+      "imagePath": "/static/images/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Test",
+      "imagePath": "/static/images/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Test",
+      "imagePath": "/static/images/6.jpg"
+    }
+  ],
+  "carts": [
+  ]
+}

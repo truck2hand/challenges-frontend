@@ -1,0 +1,22 @@
+{
+  "name": "Next Typescript Starter Kit",
+  "short_name": "Next Starter",
+  "theme_color": "#fc5600",
+  "background_color": "#dfe5e9",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/static/images/icon/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/images/icon/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
+
