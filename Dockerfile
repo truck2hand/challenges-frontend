@@ -1,15 +1,31 @@
-FROM node:12.14.1-alpine3.10
+FROM node:12.16.1-alpine as builder
 
-ENV NODE_ENV=production
+ENV NODE_ENV build
 
-ARG project_dir=/app/
+RUN apk add --no-cache make gcc g++ python
 
-WORKDIR /app/
+USER node
+WORKDIR /home/node
 
-ADD . $project_dir
+COPY . /home/node
 
-RUN npm install
-RUN npm run build
+RUN npm ci && npm run build
+
+# ---
+
+FROM node:12.16.1-alpine
+
+ENV NODE_ENV production
+
+USER node
+WORKDIR /home/node
+
+COPY --from=builder /home/node/package*.json /home/node/
+COPY --from=builder /home/node/server/ /home/node/server/
+COPY --from=builder /home/node/public/ /home/node/public/
+COPY --from=builder /home/node/.next/ /home/node/.next/
+
+RUN npm ci --production --silent
 
 EXPOSE 3000
 

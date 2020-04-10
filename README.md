@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Node 12.14.1
+- Node 12.16.1
 
 ## How to develop
 

@@ -1,8 +1,17 @@
-# add git-ignore syntax here of things you don't want copied into docker image
+# Versioning and metadata
+.dockerignore
 
-# .git
-.results
-scripts
-*Dockerfile*
-# node_modules
+# Build dependencies
+.next
+node_modules
+
+# Environment (contains sensitive data)
 .env
+
+# Files not required for production
+.editorconfig
+Dockerfile
+README.md
+.eslintignore
+.eslintrc.js
+nodemon.json
