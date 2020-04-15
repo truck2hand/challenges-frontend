@@ -1,13 +1,26 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { NextPage } from 'next';
-import { withRouter } from 'next/router';
+import { withRouter, SingletonRouter } from 'next/router';
+import { WithTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
 import { Layout } from '@components/Layout';
 import { SITE_IMAGE, SITE_NAME } from '@constants/env';
 import { /*i18n, Link, */ withTranslation } from '@server/i18n';
-import { IndexProps, IndexInitialProps } from '../interfaces';
 import Header from '@components/Header';
 
+export interface IndexProps extends WithTranslation {
+  router: SingletonRouter;
+  t: TFunction;
+  counter: number;
+  client: string;
+}
+
+export interface IndexInitialProps {
+  namespacesRequired: string[];
+}
+
+// const Index: NextComponentType<IndexPageContext, IndexInitialProps, IndexProps> = (/*props: IndexProps*/) => {
 const Index: NextPage<IndexProps, IndexInitialProps> = (/*props: IndexProps*/) => {
   // const { t } = props;
   const headProps = {
@@ -41,6 +54,7 @@ const Index: NextPage<IndexProps, IndexInitialProps> = (/*props: IndexProps*/) =
         {/* <link rel="canonical" href="" /> */}
       </Head>
       <Header text="title" />
+      <h1>{headProps.title}</h1>
     </Layout>
   );
 };

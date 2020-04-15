@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint/eslint-plugin', 'eslint-plugin-tsdoc', 'security'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'eslint-plugin-tsdoc', 'security', 'react-hooks'],
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
@@ -52,6 +52,8 @@ module.exports = {
     '@typescript-eslint/unified-signatures': 'error',
     complexity: ['error', { max: 5 }],
     'max-depth': ['error', { max: 4 }],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     'prefer-const': [
       'error',
       {

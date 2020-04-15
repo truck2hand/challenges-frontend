@@ -28,6 +28,7 @@ export default class extends Document<{ locale: string }> {
       <Html lang={this.props.locale}>
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width" />
           <meta name="format-detection" content="telephone=no, address=no, email=no" />
           <meta name="theme-color" content="#78d4e6" />
           <link rel="manifest" href={`${STATIC_FOLDER}/manifest.json`} />
