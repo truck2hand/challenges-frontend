@@ -4,24 +4,24 @@ import { NextPage } from 'next';
 import { withRouter, SingletonRouter } from 'next/router';
 import { WithTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
-import { Layout } from '@components/Layout';
+import Layout from '@components/Layout';
 import { SITE_IMAGE, SITE_NAME } from '@constants/env';
 import { /*i18n, Link, */ withTranslation } from '@server/i18n';
-import Header from '@components/Header';
+import { withAuth } from 'src/hoc/withAuth';
 
-export interface IndexProps extends WithTranslation {
+interface IndexPageProps extends WithTranslation {
   router: SingletonRouter;
   t: TFunction;
   counter: number;
   client: string;
 }
 
-export interface IndexInitialProps {
+interface IndexPageInitialProps {
   namespacesRequired: string[];
 }
 
 // const Index: NextComponentType<IndexPageContext, IndexInitialProps, IndexProps> = (/*props: IndexProps*/) => {
-const Index: NextPage<IndexProps, IndexInitialProps> = (/*props: IndexProps*/) => {
+const IndexPage: NextPage<IndexPageProps, IndexPageInitialProps> = (/*props: IndexProps*/) => {
   // const { t } = props;
   const headProps = {
     title: 'Index',
@@ -53,14 +53,13 @@ const Index: NextPage<IndexProps, IndexInitialProps> = (/*props: IndexProps*/) =
         <meta name="twitter:image" content={headProps.image} />
         {/* <link rel="canonical" href="" /> */}
       </Head>
-      <Header text="title" />
       <h1>{headProps.title}</h1>
     </Layout>
   );
 };
 
-Index.getInitialProps = async (): Promise<IndexInitialProps> => {
+IndexPage.getInitialProps = async (): Promise<IndexPageInitialProps> => {
   return { namespacesRequired: ['common'] };
 };
 
-export default withRouter(withTranslation('common')(Index));
+export default withAuth()(withRouter(withTranslation('common')(IndexPage)));

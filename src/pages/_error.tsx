@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '@components/Layout';
+import Layout from '@components/Layout';
 // import { WithTranslation } from 'next-i18next'
 // import { withTranslation } from '@App/server/i18n'
 
