@@ -27,7 +27,6 @@ export function withAuth<P, IP, C extends NextPageContext>(options: WithAuthOpti
 
       if (!token && options.redirectWhenUnauthorized) {
         redirectOnError();
-        return {} as IP;
       }
 
       const componentProps = PageComponent.getInitialProps && (await PageComponent.getInitialProps(ctx));

@@ -25,10 +25,8 @@ export default css`
     height: 100%;
     width: 100%;
     overflow-y: scroll;
-    min-width: 500px;
     position: relative;
     font: 13px/20px Helvetica, Arial, 'Lucida Grande', sans-serif;
-    text-align: center;
     overflow-x: hidden;
   }
 

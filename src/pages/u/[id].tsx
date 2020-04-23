@@ -3,10 +3,10 @@ import { NextPage } from 'next';
 import { withRouter, SingletonRouter } from 'next/router';
 import { WithTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
-import Layout from '@components/Layout';
+import Layout from '@components/organisms/Layout';
 import { SITE_IMAGE } from '@constants/env';
 import { /*i18n, Link, */ withTranslation } from '@server/i18n';
-import Header from '@components/Header';
+import Header from '@components/organisms/Header';
 import { withAuth } from 'src/hoc/withAuth';
 
 interface UserPageProps extends WithTranslation {

@@ -2,7 +2,7 @@ import App from 'next/app';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { appWithTranslation } from '@server/i18n';
-import GlobalStyle from '@components/GlobalStyle/GlobalStyle';
+import GlobalStyle from '@components/global/GlobalStyle/GlobalStyle';
 
 class MyApp extends App {
   componentDidMount() {

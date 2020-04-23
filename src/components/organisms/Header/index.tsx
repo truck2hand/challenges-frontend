@@ -22,7 +22,6 @@ const NavRoot = styled('nav')`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   height: 64px;

@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout: React.FC = (props: LayoutProps) => (
   <div id="layout">
     <Header text="title" />
-    <main>{props.children}</main>
+    {props.children}
   </div>
 );
 
