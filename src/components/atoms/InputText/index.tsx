@@ -8,14 +8,14 @@ interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const InputLabel = styled('label')`
+const InputLabel = styled.label`
   color: #424242;
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 10px;
 `;
 
-const Input = styled('input')`
+const Input = styled.input`
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -32,7 +32,7 @@ const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
   return (
     <React.Fragment>
       {label && label.length > 0 && <InputLabel>{label}</InputLabel>}
-      <Input {...rest} aria-label={label}></Input>
+      <Input {...rest} aria-label={label || rest.placeholder}></Input>
     </React.Fragment>
   );
 };
