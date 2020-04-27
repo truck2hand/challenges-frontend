@@ -2,8 +2,19 @@ import * as React from 'react';
 import { useState } from 'react';
 import InputText from '@components/atoms/InputText';
 import { Button } from '@components/atoms/Button';
-import Head from 'next/head';
-// import Link from 'next/link';
+import styled from 'styled-components';
+import { FormGroup } from '@components/atoms/FormControl';
+import LinkText from '@components/atoms/LinkText';
+
+const ForgotPasswordLinkText = styled(LinkText)`
+  text-align: right;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+`;
 
 interface LoginFormProps {
   username?: string;
@@ -22,16 +33,24 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
 
   return (
     <React.Fragment>
-      <Head>
-        <title>Log in</title>
-      </Head>
       <form onSubmit={handleSubmit}>
         <span>Log in detail</span>
-        <InputText type="text" placeholder="Username or Email" value={username} onChange={e => setUsername(e.target.value)} />
-        <InputText type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-        <Button color="inverse" type="submit">
-          Submit
-        </Button>
+        <FormWrapper>
+          <FormGroup>
+            <InputText type="text" placeholder="Username or Email" value={username} onChange={e => setUsername(e.target.value)} />
+          </FormGroup>
+          <FormGroup>
+            <InputText type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+          </FormGroup>
+          <FormGroup>
+            <ForgotPasswordLinkText>Forgot Password</ForgotPasswordLinkText>
+          </FormGroup>
+          <FormGroup>
+            <Button color="inverse" type="submit">
+              Submit
+            </Button>
+          </FormGroup>
+        </FormWrapper>
       </form>
     </React.Fragment>
   );

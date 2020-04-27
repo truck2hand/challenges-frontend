@@ -12,19 +12,21 @@ const ButtonStyles = css`
     props?.color === 'inverse'
       ? css`
           background: #fff;
-          border: 1px solid #000;
-          color: #000;
+          border: 1px solid #8898aa;
+          color: #8898aa;
         `
       : css`
           background: ${(props: { color?: string }) => getColorCode(props.color ?? 'primary')};
           border: 1px solid ${(props: { color?: string }) => getColorCode(props.color ?? 'primary')};
           color: #fff;
         `}
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 16px;
   display: block;
   width: 100%;
-  line-height: 40px;
+  height: 38px;
+  letter-spacing: 0;
+  line-height: 19px;
   font-size: 14px;
   transition: all 0.3s ease-out;
   cursor: pointer;

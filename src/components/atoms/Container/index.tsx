@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import css from '@styled-system/css';
 
 export const Container = styled('div')`
-  margin-left: 10px;
-  margin-right: 10px;
+  ${css({
+    padding: [3],
+  })}
 `;

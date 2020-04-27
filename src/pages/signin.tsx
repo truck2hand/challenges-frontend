@@ -7,9 +7,10 @@ import Layout from '@components/organisms/Layout';
 import { SITE_IMAGE } from '@constants/env';
 import { /*i18n, Link, */ withTranslation } from '@server/i18n';
 import LoginForm from '@components/organisms/LoginForm';
-import { Container } from '@components/organisms/Container';
+import { Container } from '@components/atoms/Container';
 import Title from '@components/atoms/Title';
 import Text from '@components/atoms/Text';
+import Head from 'next/head';
 
 interface SigninPageProps extends WithTranslation {
   router: SingletonRouter;
@@ -37,6 +38,9 @@ const SigninPage: NextPage<SigninPageProps, SigninPageInitialProps> = (/*props: 
 
   return (
     <Layout>
+      <Head>
+        <title>Log in</title>
+      </Head>
       <Container>
         <Title>{headProps.title}</Title>
         <Text>Login with your email, phone, username or social media</Text>

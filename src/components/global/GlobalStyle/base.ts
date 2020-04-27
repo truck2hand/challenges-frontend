@@ -1,21 +1,5 @@
 import { css } from 'styled-components';
 
-export const theme = {
-  colors: {
-    primary: '#00000',
-    secondary: '#000000',
-  },
-} as const;
-
-// ______________________________________________________
-//
-type AppTheme = typeof theme;
-// ______________________________________________________
-//
-declare module 'styled-components' {
-  interface DefaultTheme extends AppTheme {}
-}
-
 export default css`
   a {
     text-decoration: none;
