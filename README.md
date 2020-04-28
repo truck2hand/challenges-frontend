@@ -2,8 +2,9 @@
 
 ## Requirements
 
-- Node 12.16.1
-
+- Node v12.16.2
+- Next.js v9.3.5
+- StoryBook v5.3.18
 
 ## How to develop
 
