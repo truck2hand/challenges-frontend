@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
-import InputText from '@components/atoms/InputText';
-import { Button } from '@components/atoms/Button';
 import styled from 'styled-components';
-import { FormGroup } from '@components/atoms/FormControl';
+import InputText from '@components/atoms/InputText';
+import Button from '@components/atoms/Button';
+import FormGroup from '@components/atoms/FormControl';
 import LinkText from '@components/atoms/LinkText';
 
 const ForgotPasswordLinkText = styled(LinkText)`
@@ -46,7 +46,7 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
             <ForgotPasswordLinkText>Forgot Password</ForgotPasswordLinkText>
           </FormGroup>
           <FormGroup>
-            <Button color="inverse" type="submit">
+            <Button variant="outline-light" type="submit">
               Submit
             </Button>
           </FormGroup>

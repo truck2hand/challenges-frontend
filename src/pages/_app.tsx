@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { appWithTranslation } from '@server/i18n';
 import GlobalStyle from '@components/global/GlobalStyle/GlobalStyle';
-import theme from '@components/global/theme';
+import { theme } from '@components/global/theme';
 import { ThemeProvider } from 'styled-components';
 
 class MyApp extends App {

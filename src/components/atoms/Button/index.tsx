@@ -1,25 +1,36 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
-import { getColorCode } from '../utils';
-// import Link from 'next/link';
+import styled, { css, DefaultTheme } from 'styled-components';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: string | 'primary' | 'secondary' | 'inverse';
+  variant?: 'primary' | 'secondary' | 'light' | 'outline-primary' | 'outline-secondary' | 'outline-light';
 }
 
+const styles = (props: ButtonProps & { theme: DefaultTheme }) => {
+  if (!props.variant)
+    return css`
+      background: ${props.theme.buttons.primary.default};
+      border: 1px solid ${props.theme.buttons.primary.default};
+      color: #fff;
+    `;
+
+  if (props.variant.startsWith('outline-')) {
+    const variant = props.variant.replace('outline-', '');
+    return css`
+      background: #fff;
+      border: 1px solid ${props.theme.buttons[variant.toString()].default};
+      color: ${props.theme.buttons[variant.toString()].default};
+    `;
+  } else {
+    return css`
+      background: ${props.theme.buttons[props.variant].default};
+      border: 1px solid ${props.theme.buttons[props.variant].default};
+      color: #fff;
+    `;
+  }
+};
+
 const ButtonStyles = css`
-  ${(props: { color?: string }) =>
-    props?.color === 'inverse'
-      ? css`
-          background: #fff;
-          border: 1px solid #8898aa;
-          color: #8898aa;
-        `
-      : css`
-          background: ${(props: { color?: string }) => getColorCode(props.color ?? 'primary')};
-          border: 1px solid ${(props: { color?: string }) => getColorCode(props.color ?? 'primary')};
-          color: #fff;
-        `}
+  ${props => styles(props)};
   border-radius: 2px;
   font-size: 16px;
   display: block;
@@ -43,6 +54,8 @@ const ButtonWrapper = styled.button`
   }
 `;
 
-export const Button: React.FC<ButtonProps> = props => {
+const Button: React.FC<ButtonProps> = props => {
   return <ButtonWrapper {...props}>{props?.children}</ButtonWrapper>;
 };
+
+export default Button;

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import css from '@styled-system/css';
 
-export const Container = styled('div')`
-  ${css({
-    padding: [3],
-  })}
+const Container = styled('div')`
+  padding: ${props => props.theme.space[3]};
 `;
+
+export default Container;

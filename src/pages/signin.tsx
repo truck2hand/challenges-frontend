@@ -7,7 +7,7 @@ import Layout from '@components/organisms/Layout';
 import { SITE_IMAGE } from '@constants/env';
 import { /*i18n, Link, */ withTranslation } from '@server/i18n';
 import LoginForm from '@components/organisms/LoginForm';
-import { Container } from '@components/atoms/Container';
+import Container from '@components/atoms/Container';
 import Title from '@components/atoms/Title';
 import Text from '@components/atoms/Text';
 import Head from 'next/head';

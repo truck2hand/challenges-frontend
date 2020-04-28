@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import css from '@styled-system/css';
 
-export const FormGroup = styled.div`
+const FormGroup = styled.div`
   &:first-child {
     margin: 0px;
   }
-  ${css({
-    marginTop: [2],
-  })}
+  margin-top: ${props => props.theme.space[2]};
   width: 100%;
 `;
+
+export default FormGroup;
